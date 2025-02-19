@@ -29,7 +29,7 @@ const Orders = () => {
                     withCredentials: true,
                 });
                 if (response.data.success) {
-                    setOrders(response.data.data);
+                    setOrders(response.data.data.reverse());
                 }
             } catch (error) {
                 toast.error(error.response?.data?.message || error.message, {
