@@ -19,7 +19,7 @@ const ShopContextProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [amount, setAmount] = useState(0);
     const [orderItems, setOrderItems] = useState([]);
-    const serverURL = "https://luxora-fashion.vercel.app";
+    const serverURL = "https://luxora-fashion.vercel.app/api/v1";
 
     const token = localStorage.getItem("authToken");
 
