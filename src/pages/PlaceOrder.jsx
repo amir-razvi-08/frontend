@@ -45,7 +45,6 @@ const PlaceOrder = () => {
                 address: formData,
                 amount: amount + delivery_fee,
             };
-            console.log(orderItems);
 
             if (paymentMethod) {
                 const response = await axios.post(serverURL + "/orders/place-cod", order, {
@@ -71,11 +70,10 @@ const PlaceOrder = () => {
                 });
 
                 if (response.data.success) {
-                    console.log(response.data);
                     const { session_url } = response.data.data;
                     window.location.replace(session_url);
                 } else {
-                    console.log(response.data);
+                    toast.error(response.data.message || "Something went wrong during placing order", { position: "top-center", autoClose: 3000 });
                 }
             }
         } catch (error) {

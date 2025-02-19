@@ -81,7 +81,6 @@ const Orders = () => {
                 fetchOrders();
             }
         } catch (error) {
-            console.log(error);
             Swal.fire("Error", error.response?.data?.message || "Failed to cancel order", "error");
         }
     };

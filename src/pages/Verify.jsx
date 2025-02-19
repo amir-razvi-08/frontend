@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+console
 
 function Verify() {
     const { navigate, setCartItems, serverURL } = useContext(ShopContext);
@@ -33,8 +34,7 @@ function Verify() {
                 navigate("/cart");
             }
         } catch (error) {
-            console.log(error);
-            toast.error("stripe-verification failed", {
+            toast.error(error.message || "stripe-verification failed", {
                 position: "top-center",
                 autoClose: 3000,
             });

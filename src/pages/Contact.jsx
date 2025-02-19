@@ -36,8 +36,7 @@ const Contact = () => {
                 setFormData({ name: "", email: "", subject: "", message: "" });
             }
         } catch (error) {
-            console.error(error);
-            toast.error("Failed to send message.", {
+            toast.error(error.message+"Failed to send message", {
                 position: "top-center",
                 autoClose: 3000,
             });
